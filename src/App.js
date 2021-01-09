@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import Icon, { FontAwesome } from 'react-web-vector-icons';
 import axios from 'axios';
 
 import "./app.css";
@@ -23,7 +24,7 @@ function App() {
 	}
 	useEffect(() => {
 		(async () => {
-			const response = await axios.get('https://api.github.com/users/tennebris/repos');
+			const response = await axios.get('https://api.github.com/users/khausxl/repos');
 	
 			setRepos(response.data)
 		})();
@@ -162,13 +163,28 @@ function App() {
 				<div className="titlePage">
 					<h1>Contact</h1>	
 				</div>
+				<div className="main">
+					<div className="txt">
+						<h1>Send me a message</h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+					</div>
 
-				<div>
-					<input type="text"></input>
-					<input type="text"></input>
-					<input type="text"></input>
-					<input></input>
+					<div className="inputs">
+						<input type="text" placeholder="Your name" />
+						<input type="text" placeholder="Your mail" />
+						<textarea placeholder="Your message" />
+						<button>Send</button>
+					</div>
 				</div>
+
+				<footer>
+					<div className="center">
+						<FontAwesome name="facebook" color="white" size={40} />
+					</div>
+					<div className="bottom">
+						&copy;
+					</div>
+				</footer>
 			</div>
 		</div>
 	);
